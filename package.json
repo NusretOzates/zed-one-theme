@@ -3,7 +3,7 @@
   "displayName": "Zed One Theme",
   "description": "Zed IDE One Dark / One Light theme colors for Cursor and VS Code",
   "version": "1.0.3",
-  "publisher": "nusretozates",
+  "publisher": "NusretOzates",
   "license": "MIT",
   "engines": {
     "vscode": "^1.74.0"
@@ -40,10 +40,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nusretozates/zed-one-theme.git"
+    "url": "https://github.com/NusretOzates/zed-one-theme.git"
   },
   "bugs": {
-    "url": "https://github.com/nusretozates/zed-one-theme/issues"
+    "url": "https://github.com/NusretOzates/zed-one-theme/issues"
   },
-  "homepage": "https://github.com/nusretozates/zed-one-theme#readme"
+  "homepage": "https://github.com/NusretOzates/zed-one-theme#readme"
 }

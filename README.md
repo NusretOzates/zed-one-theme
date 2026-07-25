@@ -42,7 +42,7 @@ fc-cache -f
 #### Option B — Clone into extensions folder
 
 ```bash
-git clone https://github.com/nusretozates/zed-one-theme.git
+git clone https://github.com/NusretOzates/zed-one-theme.git
 ```
 
 | OS | Copy / clone into |
