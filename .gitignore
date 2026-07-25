@@ -1,0 +1,6 @@
+.DS_Store
+*.vsix
+Lilex.zip
+node_modules/
+.vscode-test/
+*.log

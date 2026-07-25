@@ -1,0 +1,24 @@
+{
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "Zed One Dark",
+  "workbench.preferredLightColorTheme": "Zed One Light",
+  "workbench.colorTheme": "Zed One Dark",
+
+  "editor.fontFamily": "Lilex, Menlo, Monaco, Consolas, 'Courier New', monospace",
+  "editor.fontSize": 15,
+  "editor.fontWeight": "400",
+  "editor.lineHeight": 1.618,
+  "editor.fontLigatures": "'calt', 'liga'",
+  "editor.semanticHighlighting.enabled": true,
+
+  "terminal.integrated.fontFamily": "Lilex, Menlo, Monaco, Consolas, monospace",
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontWeight": "400",
+
+  "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.renderLineHighlight": "line",
+  "editor.guides.indentation": true,
+  "breadcrumbs.enabled": true,
+  "python.analysis.semanticHighlighting": true
+}

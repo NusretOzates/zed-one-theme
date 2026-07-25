@@ -1,0 +1,7 @@
+.vscode/**
+.github/**
+.gitignore
+.vscodeignore
+**/*.md
+**/*.txt
+cursor-settings-snippet.json
