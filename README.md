@@ -19,7 +19,7 @@ Python was used while matching Zed screenshots, and the settings snippet include
 
 ## Install
 
-Works the same in **Cursor**, **VS Code**, **VSCodium**, **Windsurf**, and other VS Code–compatible IDEs. Only the extensions folder and `settings.json` paths differ (see tables below).
+Works the same in **Cursor**, **VS Code**, **VSCodium**, **Windsurf**, and other VS Code–compatible IDEs. Install via VSIX, then merge settings (paths below).
 
 Command Palette shortcuts:
 
@@ -47,46 +47,28 @@ fc-cache -f
 
 ### 2. Theme
 
-#### Option A — Install from VSIX (recommended)
+First download the latest `.vsix` from the [Releases](https://github.com/NusretOzates/zed-one-theme/releases) page (e.g. `zed-one-theme-1.0.3.vsix`).
 
-1. Download the latest `.vsix` from [Releases](../../releases)
-2. Open your editor → Command Palette
-3. **Extensions: Install from VSIX...**
-4. Pick the downloaded file → reload when prompted
+#### Option A — Install from VSIX in the UI (recommended)
 
-#### Option B — Clone into the extensions folder
+1. Open your editor → Command Palette
+2. **Extensions: Install from VSIX...**
+3. Pick the downloaded `.vsix` → reload when prompted
 
-```bash
-git clone https://github.com/NusretOzates/zed-one-theme.git
-```
+#### Option B — Install from VSIX via CLI
 
-Place (or clone) it here:
-
-| Editor | macOS / Linux | Windows |
-|--------|---------------|---------|
-| **Cursor** | `~/.cursor/extensions/zed-one-theme/` | `%USERPROFILE%\.cursor\extensions\zed-one-theme\` |
-| **VS Code** | `~/.vscode/extensions/zed-one-theme/` | `%USERPROFILE%\.vscode\extensions\zed-one-theme\` |
-| **VSCodium** | `~/.vscode-oss/extensions/zed-one-theme/` | `%USERPROFILE%\.vscode-oss\extensions\zed-one-theme\` |
-| **Windsurf** | `~/.windsurf/extensions/zed-one-theme/` | `%USERPROFILE%\.windsurf\extensions\zed-one-theme\` |
-
-Folder layout must be:
-
-```text
-zed-one-theme/
-├── package.json
-└── themes/
-    ├── zed-one-dark-color-theme.json
-    └── zed-one-light-color-theme.json
-```
-
-Then Command Palette → **Developer: Reload Window**.
-
-#### Option C — Package with `vsce` (maintainers)
+1. Download the `.vsix` from [Releases](https://github.com/NusretOzates/zed-one-theme/releases) (same file as above)
+2. In a terminal, run one of:
 
 ```bash
-npx @vscode/vsce package
-# then Install from VSIX in your editor
+# VS Code
+code --install-extension /path/to/zed-one-theme-1.0.3.vsix
+
+# Cursor
+cursor --install-extension /path/to/zed-one-theme-1.0.3.vsix
 ```
+
+Use the full path to the file you downloaded (or `cd` into that folder first).
 
 ### 3. Settings
 
@@ -140,7 +122,7 @@ Reload: **Developer: Reload Window**. If needed: **Preferences: Color Theme** �
 ## Checklist
 
 - [ ] Lilex installed
-- [ ] Theme installed (VSIX or extensions folder)
+- [ ] Theme installed from VSIX
 - [ ] Settings merged
 - [ ] Window reloaded
 
@@ -150,11 +132,11 @@ Reload: **Developer: Reload Window**. If needed: **Preferences: Color Theme** �
 
 | Problem | Fix |
 |---------|-----|
-| Theme missing from list | Reload; confirm `package.json` is at the extension root for *your* editor |
+| Theme missing from list | Fully quit and reopen the editor, then **Preferences: Color Theme** → **Zed One Dark**. Reinstall with Option A or B if needed |
 | Wrong font / no `->` ligatures | Install Lilex system-wide; fully quit and reopen the editor |
 | Colors look like Atom One Dark | Select **Zed One Dark** specifically |
 | Linux: font not found | `fc-cache -f` then restart the editor |
-| Installed under Cursor but using VS Code | Extensions don’t share across forks — install again into that editor’s extensions folder / via VSIX |
+| Installed under Cursor but using VS Code | Extensions don’t share across forks — install the VSIX again in that editor |
 
 ---
 
@@ -176,16 +158,7 @@ Or in `settings.json`, change/remove:
 
 ### 2. Remove the theme extension
 
-**If installed via VSIX:** Extensions sidebar → find **Zed One Theme** → gear → **Uninstall** → reload.
-
-**If installed by folder copy**, delete the extension directory for your editor (see the install table above), e.g.:
-
-| Editor | macOS / Linux example |
-|--------|------------------------|
-| **Cursor** | `~/.cursor/extensions/zed-one-theme/` |
-| **VS Code** | `~/.vscode/extensions/zed-one-theme/` |
-
-Then **Developer: Reload Window**.
+Extensions sidebar → find **Zed One Theme** → gear → **Uninstall** → reload.
 
 ### 3. Revert settings (optional)
 
