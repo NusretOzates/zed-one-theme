@@ -2,7 +2,7 @@
   "name": "zed-one-theme",
   "displayName": "Zed One Theme",
   "description": "Zed IDE One Dark / One Light theme colors for Cursor and VS Code, plus darker Ember and Moss variants",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publisher": "NusretOzates",
   "license": "MIT",
   "engines": {

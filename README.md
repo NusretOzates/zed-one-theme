@@ -49,7 +49,7 @@ fc-cache -f
 
 ### 2. Theme
 
-First download the latest `.vsix` from the [Releases](https://github.com/NusretOzates/zed-one-theme/releases) page (e.g. `zed-one-theme-1.1.0.vsix`).
+First download the latest `.vsix` from the [Releases](https://github.com/NusretOzates/zed-one-theme/releases) page (e.g. `zed-one-theme-1.1.1.vsix`).
 
 #### Option A — Install from VSIX in the UI (recommended)
 
@@ -64,10 +64,10 @@ First download the latest `.vsix` from the [Releases](https://github.com/NusretO
 
 ```bash
 # VS Code
-code --install-extension /path/to/zed-one-theme-1.1.0.vsix
+code --install-extension /path/to/zed-one-theme-1.1.1.vsix
 
 # Cursor
-cursor --install-extension /path/to/zed-one-theme-1.1.0.vsix
+cursor --install-extension /path/to/zed-one-theme-1.1.1.vsix
 ```
 
 Use the full path to the file you downloaded (or `cd` into that folder first).
