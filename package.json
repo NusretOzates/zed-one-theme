@@ -1,8 +1,8 @@
 {
   "name": "zed-one-theme",
   "displayName": "Zed One Theme",
-  "description": "Zed IDE One Dark / One Light theme colors for Cursor and VS Code",
-  "version": "1.0.3",
+  "description": "Zed IDE One Dark / One Light theme colors for Cursor and VS Code, plus darker Ember and Moss variants",
+  "version": "1.1.0",
   "publisher": "NusretOzates",
   "license": "MIT",
   "engines": {
@@ -18,10 +18,12 @@
     "zed",
     "one dark",
     "one light",
+    "ember",
+    "moss",
     "cursor"
   ],
   "galleryBanner": {
-    "color": "#282c33",
+    "color": "#1e1919",
     "theme": "dark"
   },
   "contributes": {
@@ -30,6 +32,16 @@
         "label": "Zed One Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/zed-one-dark-color-theme.json"
+      },
+      {
+        "label": "Zed One Dark Ember",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zed-one-dark-ember-color-theme.json"
+      },
+      {
+        "label": "Zed One Dark Moss",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zed-one-dark-moss-color-theme.json"
       },
       {
         "label": "Zed One Light",

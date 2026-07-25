@@ -4,7 +4,9 @@ Port of [Zed](https://zed.dev)’s built-in **One Dark** and **One Light** color
 
 | Theme | Appearance |
 |-------|------------|
-| **Zed One Dark** | Dark |
+| **Zed One Dark** | Classic cool charcoal (Zed default) |
+| **Zed One Dark Ember** | Darker reddish-gray UI; warmer amber/rose syntax |
+| **Zed One Dark Moss** | Darker greenish-gray UI; seafoam/peach syntax |
 | **Zed One Light** | Light |
 
 Colors are taken from Zed’s embedded One Dark / One Light theme (not a generic Atom One Dark clone).
@@ -47,7 +49,7 @@ fc-cache -f
 
 ### 2. Theme
 
-First download the latest `.vsix` from the [Releases](https://github.com/NusretOzates/zed-one-theme/releases) page (e.g. `zed-one-theme-1.0.3.vsix`).
+First download the latest `.vsix` from the [Releases](https://github.com/NusretOzates/zed-one-theme/releases) page (e.g. `zed-one-theme-1.1.0.vsix`).
 
 #### Option A — Install from VSIX in the UI (recommended)
 
@@ -62,10 +64,10 @@ First download the latest `.vsix` from the [Releases](https://github.com/NusretO
 
 ```bash
 # VS Code
-code --install-extension /path/to/zed-one-theme-1.0.3.vsix
+code --install-extension /path/to/zed-one-theme-1.1.0.vsix
 
 # Cursor
-cursor --install-extension /path/to/zed-one-theme-1.0.3.vsix
+cursor --install-extension /path/to/zed-one-theme-1.1.0.vsix
 ```
 
 Use the full path to the file you downloaded (or `cd` into that folder first).
@@ -115,7 +117,7 @@ Optional (Python / Pylance only):
 | **VSCodium** | `~/Library/Application Support/VSCodium/User/settings.json` | `~/.config/VSCodium/User/settings.json` | `%APPDATA%\VSCodium\User\settings.json` |
 | **Windsurf** | `~/Library/Application Support/Windsurf/User/settings.json` | `~/.config/Windsurf/User/settings.json` | `%APPDATA%\Windsurf\User\settings.json` |
 
-Reload: **Developer: Reload Window**. If needed: **Preferences: Color Theme** → **Zed One Dark**.
+Reload: **Developer: Reload Window**. If needed: **Preferences: Color Theme** → **Zed One Dark**, **Zed One Dark Ember**, **Zed One Dark Moss**, or **Zed One Light**.
 
 ---
 
@@ -132,7 +134,7 @@ Reload: **Developer: Reload Window**. If needed: **Preferences: Color Theme** �
 
 | Problem | Fix |
 |---------|-----|
-| Theme missing from list | Fully quit and reopen the editor, then **Preferences: Color Theme** → **Zed One Dark**. Reinstall with Option A or B if needed |
+| Theme missing from list | Fully quit and reopen the editor, then **Preferences: Color Theme**. Reinstall with Option A or B if needed |
 | Wrong font / no `->` ligatures | Install Lilex system-wide; fully quit and reopen the editor |
 | Colors look like Atom One Dark | Select **Zed One Dark** specifically |
 | Linux: font not found | `fc-cache -f` then restart the editor |
