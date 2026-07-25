@@ -132,6 +132,57 @@ Reload: **Developer: Reload Window**. Pick **Zed One Dark** under **Preferences:
 
 ---
 
+## Uninstall / revert
+
+To undo everything and go back to Cursor’s defaults (or your previous look):
+
+### 1. Switch theme away from Zed One
+
+Command Palette → **Preferences: Color Theme** → pick any other theme (e.g. **Dark Modern**).
+
+Or in `settings.json`, change/remove:
+
+```json
+"workbench.colorTheme": "Zed One Dark",
+"workbench.preferredDarkColorTheme": "Zed One Dark",
+"workbench.preferredLightColorTheme": "Zed One Light"
+```
+
+### 2. Remove the theme extension
+
+**If installed via VSIX:** Extensions sidebar → find **Zed One Theme** → gear → **Uninstall** → reload.
+
+**If installed by folder copy**, delete the extension directory:
+
+| OS | Path |
+|----|------|
+| **macOS / Linux** | `~/.cursor/extensions/zed-one-theme/` (or `zed-one-theme-1.0.3/`) |
+| **Windows** | `%USERPROFILE%\.cursor\extensions\zed-one-theme\` |
+
+Then **Developer: Reload Window**.
+
+### 3. Revert settings (optional)
+
+In `settings.json`, remove or restore the keys you added from `cursor-settings-snippet.json`, especially:
+
+- `editor.fontFamily` / `editor.fontSize` / `editor.lineHeight` / `editor.fontLigatures`
+- `terminal.integrated.fontFamily` / `terminal.integrated.fontSize`
+- the `workbench.*ColorTheme` keys above
+
+If you kept a backup of `settings.json` from before installing, replace the file with that backup.
+
+### 4. Uninstall Lilex (optional)
+
+Only needed if you don’t want the font on the system anymore.
+
+| OS | How |
+|----|-----|
+| **macOS** | Font Book → find **Lilex** → right-click → **Remove** |
+| **Linux** | `rm -rf ~/.local/share/fonts/lilex && fc-cache -f` |
+| **Windows** | Settings → Personalization → Fonts → **Lilex** → Uninstall |
+
+---
+
 ## Credits
 
 - Color values from [Zed](https://zed.dev) One Dark / One Light (`assets/themes/one/one.json`)
