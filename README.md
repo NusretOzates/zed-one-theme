@@ -1,6 +1,6 @@
-# Zed One Theme for Cursor / VS Code
+# Zed One Theme for Cursor, VS Code & friends
 
-Port of [Zed](https://zed.dev)’s built-in **One Dark** and **One Light** colors to Cursor and VS Code, with matching editor settings (Lilex font, size, line height, ligatures).
+Port of [Zed](https://zed.dev)’s built-in **One Dark** and **One Light** colors to any editor that runs VS Code extensions (Cursor, VS Code, VSCodium, Windsurf, and similar), with matching editor settings (Lilex font, size, line height, ligatures).
 
 | Theme | Appearance |
 |-------|------------|
@@ -9,9 +9,24 @@ Port of [Zed](https://zed.dev)’s built-in **One Dark** and **One Light** color
 
 Colors are taken from Zed’s embedded One Dark / One Light theme (not a generic Atom One Dark clone).
 
+### Language support
+
+**All languages.** This is a full workbench + syntax theme (TextMate scopes + semantic token colors). It is not Python-only.
+
+Python was used while matching Zed screenshots, and the settings snippet includes an optional `python.analysis.semanticHighlighting` key. That line only affects Python/Pylance; you can omit it if you don’t use Python. JS/TS, Rust, Go, JSON, Markdown, etc. all pick up the same palette.
+
 ---
 
 ## Install
+
+Works the same in **Cursor**, **VS Code**, **VSCodium**, **Windsurf**, and other VS Code–compatible IDEs. Only the extensions folder and `settings.json` paths differ (see tables below).
+
+Command Palette shortcuts:
+
+| OS | Shortcut |
+|----|----------|
+| **macOS** | `Cmd+Shift+P` |
+| **Linux / Windows** | `Ctrl+Shift+P` |
 
 ### 1. Font (Lilex)
 
@@ -32,23 +47,27 @@ fc-cache -f
 
 ### 2. Theme
 
-#### Option A — Install from VSIX (releases)
+#### Option A — Install from VSIX (recommended)
 
 1. Download the latest `.vsix` from [Releases](../../releases)
-2. Cursor / VS Code → Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`)
+2. Open your editor → Command Palette
 3. **Extensions: Install from VSIX...**
-4. Pick the downloaded file → reload
+4. Pick the downloaded file → reload when prompted
 
-#### Option B — Clone into extensions folder
+#### Option B — Clone into the extensions folder
 
 ```bash
 git clone https://github.com/NusretOzates/zed-one-theme.git
 ```
 
-| OS | Copy / clone into |
-|----|-------------------|
-| **macOS / Linux** | `~/.cursor/extensions/zed-one-theme/` |
-| **Windows** | `%USERPROFILE%\.cursor\extensions\zed-one-theme\` |
+Place (or clone) it here:
+
+| Editor | macOS / Linux | Windows |
+|--------|---------------|---------|
+| **Cursor** | `~/.cursor/extensions/zed-one-theme/` | `%USERPROFILE%\.cursor\extensions\zed-one-theme\` |
+| **VS Code** | `~/.vscode/extensions/zed-one-theme/` | `%USERPROFILE%\.vscode\extensions\zed-one-theme\` |
+| **VSCodium** | `~/.vscode-oss/extensions/zed-one-theme/` | `%USERPROFILE%\.vscode-oss\extensions\zed-one-theme\` |
+| **Windsurf** | `~/.windsurf/extensions/zed-one-theme/` | `%USERPROFILE%\.windsurf\extensions\zed-one-theme\` |
 
 Folder layout must be:
 
@@ -60,18 +79,18 @@ zed-one-theme/
     └── zed-one-light-color-theme.json
 ```
 
-Then **Developer: Reload Window**.
+Then Command Palette → **Developer: Reload Window**.
 
-#### Option C — From this repo with `vsce` (maintainers)
+#### Option C — Package with `vsce` (maintainers)
 
 ```bash
 npx @vscode/vsce package
-# then Install from VSIX
+# then Install from VSIX in your editor
 ```
 
 ### 3. Settings
 
-Command Palette → **Preferences: Open User Settings (JSON)** and merge keys from [`cursor-settings-snippet.json`](cursor-settings-snippet.json):
+Command Palette → **Preferences: Open User Settings (JSON)** and merge keys from [`cursor-settings-snippet.json`](cursor-settings-snippet.json) (same snippet works in VS Code and other forks):
 
 ```json
 {
@@ -95,27 +114,33 @@ Command Palette → **Preferences: Open User Settings (JSON)** and merge keys fr
   "editor.minimap.renderCharacters": false,
   "editor.renderLineHighlight": "line",
   "editor.guides.indentation": true,
-  "breadcrumbs.enabled": true,
-  "python.analysis.semanticHighlighting": true
+  "breadcrumbs.enabled": true
 }
+```
+
+Optional (Python / Pylance only):
+
+```json
+"python.analysis.semanticHighlighting": true
 ```
 
 `settings.json` locations:
 
-| OS | Path |
-|----|------|
-| **macOS** | `~/Library/Application Support/Cursor/User/settings.json` |
-| **Linux** | `~/.config/Cursor/User/settings.json` |
-| **Windows** | `%APPDATA%\Cursor\User\settings.json` |
+| Editor | macOS | Linux | Windows |
+|--------|-------|-------|---------|
+| **Cursor** | `~/Library/Application Support/Cursor/User/settings.json` | `~/.config/Cursor/User/settings.json` | `%APPDATA%\Cursor\User\settings.json` |
+| **VS Code** | `~/Library/Application Support/Code/User/settings.json` | `~/.config/Code/User/settings.json` | `%APPDATA%\Code\User\settings.json` |
+| **VSCodium** | `~/Library/Application Support/VSCodium/User/settings.json` | `~/.config/VSCodium/User/settings.json` | `%APPDATA%\VSCodium\User\settings.json` |
+| **Windsurf** | `~/Library/Application Support/Windsurf/User/settings.json` | `~/.config/Windsurf/User/settings.json` | `%APPDATA%\Windsurf\User\settings.json` |
 
-Reload: **Developer: Reload Window**. Pick **Zed One Dark** under **Preferences: Color Theme** if needed.
+Reload: **Developer: Reload Window**. If needed: **Preferences: Color Theme** → **Zed One Dark**.
 
 ---
 
 ## Checklist
 
 - [ ] Lilex installed
-- [ ] Theme installed
+- [ ] Theme installed (VSIX or extensions folder)
 - [ ] Settings merged
 - [ ] Window reloaded
 
@@ -125,20 +150,21 @@ Reload: **Developer: Reload Window**. Pick **Zed One Dark** under **Preferences:
 
 | Problem | Fix |
 |---------|-----|
-| Theme missing from list | Reload; confirm `package.json` is at the extension root |
-| Wrong font / no `->` ligatures | Install Lilex system-wide; fully quit and reopen Cursor |
+| Theme missing from list | Reload; confirm `package.json` is at the extension root for *your* editor |
+| Wrong font / no `->` ligatures | Install Lilex system-wide; fully quit and reopen the editor |
 | Colors look like Atom One Dark | Select **Zed One Dark** specifically |
-| Linux: font not found | `fc-cache -f` then restart Cursor |
+| Linux: font not found | `fc-cache -f` then restart the editor |
+| Installed under Cursor but using VS Code | Extensions don’t share across forks — install again into that editor’s extensions folder / via VSIX |
 
 ---
 
 ## Uninstall / revert
 
-To undo everything and go back to Cursor’s defaults (or your previous look):
+To undo everything and go back to your previous look:
 
 ### 1. Switch theme away from Zed One
 
-Command Palette → **Preferences: Color Theme** → pick any other theme (e.g. **Dark Modern**).
+Command Palette → **Preferences: Color Theme** → pick any other theme (e.g. **Dark Modern** / **Default Dark Modern**).
 
 Or in `settings.json`, change/remove:
 
@@ -152,18 +178,18 @@ Or in `settings.json`, change/remove:
 
 **If installed via VSIX:** Extensions sidebar → find **Zed One Theme** → gear → **Uninstall** → reload.
 
-**If installed by folder copy**, delete the extension directory:
+**If installed by folder copy**, delete the extension directory for your editor (see the install table above), e.g.:
 
-| OS | Path |
-|----|------|
-| **macOS / Linux** | `~/.cursor/extensions/zed-one-theme/` (or `zed-one-theme-1.0.3/`) |
-| **Windows** | `%USERPROFILE%\.cursor\extensions\zed-one-theme\` |
+| Editor | macOS / Linux example |
+|--------|------------------------|
+| **Cursor** | `~/.cursor/extensions/zed-one-theme/` |
+| **VS Code** | `~/.vscode/extensions/zed-one-theme/` |
 
 Then **Developer: Reload Window**.
 
 ### 3. Revert settings (optional)
 
-In `settings.json`, remove or restore the keys you added from `cursor-settings-snippet.json`, especially:
+In `settings.json`, remove or restore the keys you added from the snippet, especially:
 
 - `editor.fontFamily` / `editor.fontSize` / `editor.lineHeight` / `editor.fontLigatures`
 - `terminal.integrated.fontFamily` / `terminal.integrated.fontSize`
